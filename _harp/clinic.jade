@@ -1,0 +1,81 @@
+.well
+  .row
+    .container
+      h2 Our Clinic
+      p Here are some pictures from around the clinic:
+      #carousel.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li(data-target='#carousel' data-slide-to='0').active
+          li(data-target='#carousel' data-slide-to='1')
+          li(data-target='#carousel' data-slide-to='2')
+          li(data-target='#carousel' data-slide-to='3')
+          li(data-target='#carousel' data-slide-to='4')
+          li(data-target='#carousel' data-slide-to='5')
+          li(data-target='#carousel' data-slide-to='6')
+          li(data-target='#carousel' data-slide-to='7')
+          li(data-target='#carousel' data-slide-to='8')
+          li(data-target='#carousel' data-slide-to='9')
+          li(data-target='#carousel' data-slide-to='10')
+          li(data-target='#carousel' data-slide-to='11')
+          li(data-target='#carousel' data-slide-to='12')
+
+        .carousel-inner(role='listbox')
+          .item.active
+            img(src='/static/img/gallery/1.jpg' alt='')
+            .carousel-caption
+              | Clinic Entrance
+          .item
+            img(src='/static/img/gallery/2.jpg' alt='')
+            .carousel-caption
+              | Reception
+          .item
+            img(src='/static/img/gallery/3.jpg' alt='')
+            .carousel-caption
+              | Waiting Room
+          .item
+            img(src='/static/img/gallery/4.jpg' alt='')
+            .carousel-caption
+              | Exam Room 1
+          .item
+            img(src='/static/img/gallery/5.jpg' alt='')
+            .carousel-caption
+              | Pharmacy
+          .item
+            img(src='/static/img/gallery/6.jpg' alt='')
+            .carousel-caption
+              | Treatment
+          .item
+            img(src='/static/img/gallery/7.jpg' alt='')
+            .carousel-caption
+              | Treatment (Different Angle)
+          .item
+            img(src='/static/img/gallery/8.jpg' alt='')
+            .carousel-caption
+              | Dental Treatment
+          .item
+            img(src='/static/img/gallery/9.jpg' alt='')
+            .carousel-caption
+              | X-Ray
+          .item
+            img(src='/static/img/gallery/10.jpg' alt='')
+            .carousel-caption
+              | Exam Room 2
+          .item
+            img(src='/static/img/gallery/11.jpg' alt='')
+            .carousel-caption
+              | Surgery Suite
+          .item
+            img(src='/static/img/gallery/12.jpg' alt='')
+            .carousel-caption
+              | Dog Runs
+          .item
+            img(src='/static/img/gallery/13.jpg' alt='')
+            .carousel-caption
+              | Acupuncture/Consultation Room
+
+        a(href='#carousel' role='button' data-slide='prev').left.carousel-control
+          span(aria-hidden='true').glyphicon.glyphicon-chevron-left
+          span.sr-only Previous
+        a(href='#carousel' role='button' data-slide='next').right.carousel-control
+          span(aria-hidden='true').glyphicon.glyphicon-chevron-right
+          span.sr-only Next

@@ -1,0 +1,91 @@
+style.
+  a:hover {
+    color: #444;
+    text-decoration: none;
+  }
+  a.current {
+    color: #444;
+    text-decoration: none;
+  }
+  .tab-content li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+  }
+  li {
+  line-height: 140%;
+  }
+
+.well
+  .row
+    .container(style='padding: 0 0 50px')
+      h2 Pet Care Resources
+      p Please take advantage of these pet and owner-related links, including Animal Haven's original publications!
+      .col-sm-4
+        ul(style='font-family: headerFont; font-size: 24px; list-style-type: none; padding: 17px 0; margin: 0').tabs
+          li
+            a(href='#general') All Pets
+          li 
+            a(href='#cat') Cats
+          li 
+            a(href='#dog') Dogs
+      .col-sm-7.tab-content
+        h3.tab#general For Every Pet
+          br
+          br
+          ul(style='text-align: left')
+            li
+              a(href='http://www.animalhavenvetclinic.com/data/Intro_Brushing.pdf' target='_blank' alt="Intro to Brushing Your Pet's Teeth") Intro to Brushing Your Pet's Teeth (PDF Download)
+            li
+              a(href='http://www.petplace.com/' target='_blank' alt='PetPlace - General Pet Health Questions') PetPlace - General Pet Health Questions
+            li
+              a(href='http://healthypetcheckup.org/' target='_blank' alt='Partners for Healthy Pets - What To Ask Your Vet') Partners for Healthy Pets - What To Ask Your Vet
+            li
+              a(href='http://csu-cvmbs.colostate.edu/vth/diagnostic-and-support/argus/Pages/default.aspx' target='_blank' alt='CSU Argus Institute - Coping With Pet Loss') CSU Argus Institute - Coping With Pet Loss
+            li
+              a(href='https://www.heartwormsociety.org/' target='_blank' alt='Partners for Healthy Pets') American Heartworm Society
+            li
+              a(href='http://www.petobesityprevention.com/' target='_blank' alt='Pet Obesity Prevention') Pet Obesity Prevention
+            li
+              a(href='http://www.larimerhumane.org/' target='_blank' alt="Larimer County Pet License Purchase & Renewal") Larimer County Pet License Purchase &amp; Renewal
+        h3.tab#cat Resources For Cats
+          br
+          br
+          ul(style='text-align: left')
+            li
+              a(href='http://www.animalhavenvetclinic.com/data/Dental_Care_for_Cats.pdf' target='_blank' alt='Dental Care for Cats') Dental Care for Cats (PDF Download)
+            li
+              a(href='http://www.catwellness.org/' target='_blank' alt='Catwellness News') Catwellness News
+            li
+              a(href='http://www.vet.cornell.edu/fhc/' target='_blank' alt='Cornell Feline Health Center') Cornell Feline Health Center 
+            li
+              a(href='http://danielmybrother.hubpages.com/hub/Giving-a-cat-subcutaneous-fluids' target='_blank' alt='Guide to Subcutaneous Fluids for Cats') Guide to Subcutaneous Fluids for Cats
+        h3.tab#dog Resources For Dogs
+          br
+          br
+          ul(style='text-align: left')
+            li
+              a(href='http://www.animalhavenvetclinic.com/data/Dental_Care_for_Dogs.pdf' target='_blank' alt='Dental Care for Dogs') Dental Care for Dogs (PDF Download)
+            li
+              a(href='http://www.akc.org/' target='_blank' alt='American Kennel Club - Info on Breeds & Breeders') American Kennel Club - Info on Breeds &amp; Breeders
+
+script(src="/static/js/jquery.js")
+script.
+  var tabs = $('.tabs');
+
+  $('.tab').hide();
+
+  tabs.find('a').on('click', function(e) {
+    e.preventDefault();
+    tabs.find('.current').removeClass('current');
+    $(this).addClass('current');
+
+    var newTab = $(this.hash);
+    var newHeight = newTab.height();
+    var container = $('.tab-content');
+
+    newTab.siblings(':visible').fadeOut('fast');
+    container.animate({'height': newHeight}, 300, function() {
+      newTab.fadeIn('fast');
+    });
+
+  }).first().click();

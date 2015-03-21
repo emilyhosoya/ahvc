@@ -1,0 +1,62 @@
+style.
+  a:hover {
+    color: #444;
+    text-decoration: none;
+  }
+  a.current {
+    color: #444;
+    text-decoration: none;
+  }
+
+.well
+  .row
+    .container(style='padding: 0 0 50px')
+      h2 Our Staff
+      .col-sm-4
+        ul(style='font-family: headerFont; font-size: 24px; list-style-type: none; padding: 16px 0; margin: 0').tabs
+          li 
+            a(href='#ruth') Dr. Ruth Altman
+          li 
+            a(href='#jennifer') Jennifer
+      .col-sm-7.tab-content
+        h3.tab#ruth Dr. Ruth Altman, Veterinarian
+          br
+          br
+          p(style='text-align: left')
+            | Dr. Altman has been the proud owner of Animal Haven Veterinary Clinic since July 2004. Born and raised in Miami, she received her undergraduate degree at Colorado State University and her veterinary degree from the University of Florida. While attending CSU, Dr. Altman's beloved German Shepard, Keja, became a patient of Animal Haven. She was impressed by the gentle and professional care the staff provided, and formed an immediate attachment to the clinic.
+            br
+            br
+            | Upon graduation from vet school, Dr. Altman practiced in Oregon for three years and in Parker for 18 months. Then the opportunity to make Animal Haven her own presented itself, and she jumped at the chance. Dedicating the practice to Keja's memory, Dr. Altman is pleased that she can provide Fort Collins pet owners with the same sensitive attention and medical expertise that seh first experienced when she was a teenager.
+            br
+            br
+            | Dr. Altman shares her life with her newer family members, Kyra (a Chihuahua) and Laika (a German Shepherd). During her time away from the clinic, Dr. Altman enjoys hiking with her dogs, reading and photography.
+        h3.tab#jennifer Jennifer, Technician
+          br
+          br
+          p(style='text-align: left')
+            | Jennifer was born in a very small town in rural Minnesota. Although she did a couple internships in the veterinary field in high school and as an undergrad, it was not the focus of her formal education. After attending the University of Minnesota (go Gophers!) and meeting her husband Jeremy, she took a job at the Humane Society in Saint Paul, Minnesota. It was here she realized that working with animals was more than just an interest but a genuine passion. In 2001, Jennifer and Jeremy moved to Fort Collins and Jennifer has been working for veterinary clinics in the area since. Since beginning her job at Animal Haven in 2005, Jennifer has worn many hats. Although formally the clinic's office manager, she also performs the duties of a technician, assistant and receptionist. It keeps her busy, and she wouldn't have it any other way!
+            br
+            br
+            | Jennifer and Jeremy currently own a home in Loveland, which they share with Amadeus the kitty, Kyra (Siberian Husky -- coincidentally the same name as Dr. Altman's little dog) and Natalia (German Shepherd). They are both avid sports fans, especially hockey as they are season ticket holders to the Colorado Eagles. Jennifer also loves the outdoors, to read and cook.
+
+script(src="/static/js/jquery.js")
+script.
+  var tabs = $('.tabs');
+
+  $('.tab').hide();
+
+  tabs.find('a').on('click', function(e) {
+    e.preventDefault();
+    tabs.find('.current').removeClass('current');
+    $(this).addClass('current');
+
+    var newTab = $(this.hash);
+    var newHeight = newTab.height();
+    var container = $('.tab-content');
+
+    newTab.siblings(':visible').fadeOut('fast');
+    container.animate({'height': newHeight}, 300, function() {
+      newTab.fadeIn('fast');
+    });
+
+  }).first().click();

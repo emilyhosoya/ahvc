@@ -1,0 +1,11 @@
+.well
+  .row
+    .container
+      h2 Services Offered
+      br
+      .col-sm-6
+        img(src='static/img/services-photo.jpg' alt='Surgery suite' style='width:100%;height:auto')
+      .col-sm-6
+        ul(style='list-style-type: none; padding: 10px 0; margin: 0')
+          each val in ['Preventative Health Care', 'Senior Pet Wellness', 'Nutrition & Weight Management','Arthritis & Pain Management','Surgery -- Spay, Neuter, Soft Tissue','Dentistry -- Routine & In-house Veterinary Dental Specialist','Vaccinations Based on Pet Lifestyle','In-house Pharmacy & Diagnostic Laboratory','Early Morning Drop Off & Evening Hours','Emergency Treatments','Close Affiliation with Medical, Dental, Orthopaedic, Soft Tissue Specialists', 'Holistic Healing -- Acupuncture, Herbal Medicine, Massage Therapy']
+            li= val

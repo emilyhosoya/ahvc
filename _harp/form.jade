@@ -1,0 +1,95 @@
+.well
+  .row
+    .container
+      h2 Appointment Request
+      p.help-block
+        <span style='color: red'>*</span>Please complete required fields
+        br
+        | **If emergency, please call (970) 663-7387
+      .form(style='text-align: left')
+        .container
+          .row
+            br
+            .form-group.col-xs-6
+              label(for="firstName") First Name:<span style='color: red'>*</span>
+              input.form-control#firstName(type="text" placeholder="First name" required)
+            .form-group.col-xs-6
+              label(for="lastName") Last Name:<span style='color: red'>*</span>
+              input.form-control#lastName(type="text" placeholder="Last name" required)
+            .form-group.col-xs-12
+              label(for="email") Email address:<span style='color: red'>*</span>
+              input.form-control#email(type="email" placeholder="Email" required)
+            .form-group.col-xs-12
+              label(for="phone") Phone number:<span style='color: red'>*</span>
+              input.form-control#phone(type="tel" placeholder="Phone number" required)
+          .row
+            br
+            .form-group.col-xs-12
+              label(for="petName") Pet name:
+              input.form-control#petName(type="text" placeholder="Pet name")
+          .row
+            .form-group.col-xs-6
+              label(for="petSpecies") Pet species:
+              select.form-control#petSpecies
+                option Select...
+                option Canine
+                option Feline
+                option Avian
+                option Equine
+                option Bovine
+                option Other
+            .form-group.col-xs-6
+              label(for="petBreed") Pet breed:
+              input.form-control#petBreed(type="text" placeholder="Pet breed")
+          .row
+            br
+            .form-group.col-xs-12
+              label Best day(s) for appointment:
+                .checkbox
+                  label
+                    input(type="checkbox" value='Monday')
+                    | Monday (7:30am-6pm)
+                .checkbox
+                  label
+                    input(type="checkbox" value='Tuesday')
+                    | Tuesday (7:30am-6pm)
+                .checkbox
+                  label
+                    input(type="checkbox" value='Wednesday')
+                    | Wednesday (8am-8pm)
+                .checkbox
+                  label
+                    input(type="checkbox" value='Thursday')
+                    | Thursday (7:30am-6pm)
+                .checkbox
+                  label
+                    input(type="checkbox" value='Friday')
+                    | Friday (7:30am-6pm)
+                .checkbox
+                  label
+                    input(type="checkbox" value='Saturday')
+                    | Saturday (8:30am-1pm)
+          .row
+            .form-group.col-xs-12
+              label(for='service') Service needed:
+              select.form-control#service
+                option Select service...
+                option General exam
+                option Surgery
+                option Dentistry
+                option Vaccination
+                option Pharmacy/Diagnostic
+                option Acupuncture/Massage
+          .row
+            .form-group.col-xs-12
+              label(for='message') Message:
+              textarea(rows='3').form-control
+          button.btn.btn-default(type="submit") Submit
+
+script(src='/static/js/jquery.js')
+script(src='/static/js/jquery.maskedinput.js')
+
+script.
+  $(function($) {
+    $("#phone").mask("(999) 999-9999");
+  });
